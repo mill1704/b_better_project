@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.navbar > .container {
+  height: 50px;
+}
+@screen md-down {
+  .navbar .nav-menu {
+    @apply fixed inset-0 w-0 h-full bg-white z-1 overflow-hidden transition-all duration-500 ease-in-out invisible pt-9;
+  }
+  .navbar .nav-menu.isExpanded {
+    @apply w-full overflow-auto visible;
+  }
+  .navbar .nav-menu.isExpanded-dark {
+    @apply bg-black;
+  }
+  .navbar .nav-menu .hide-menu {
+    @apply absolute top-5 right-5;
+  }
+  .navbar .nav-menu a {
+    @apply block w-max mx-auto my-6 text-base;
+  }
+}
+.navbar .nav-item .switch-mode {
+  @apply relative mr-6 cursor-pointer;
+}
+.navbar .nav-item .switch-mode input {
+  @apply absolute inset-0 hidden;
+}
+.navbar .nav-item .switch-toggle {
+  @apply w-12 h-4 relative rounded-full;
+}
+.navbar .nav-item .switch-toggle .dot {
+  @apply w-6 h-6 absolute top-1/2 left-0 translate-y-[-50%] shadow-1 rounded-full transition-all duration-300 ease-out flex items-center justify-center;
+}
+.navbar .nav-item .switch-toggle.isDarkMode .dot {
+  @apply left-1/2;
+}
+
+.product-type-card {
+  @apply shadow-base px-2 md:px-5 rounded-lg border border-transparent dark:border-gray-900 hover:border-primary dark:hover:border-primary transition duration-300 cursor-pointer;
+  height: 60px;
+}
+.product-type-card-wrap {
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+@screen sm {
+  .product-type-card-wrap {
+    max-width: 33.33%;
+    flex: 0 0 33.33%;
+  }
+}
+@screen md {
+  .product-type-card-wrap {
+    max-width: 25%;
+    flex: 0 0 25%;
+  }
+}
+@screen lg {
+  .product-type-card-wrap {
+    max-width: 20%;
+    flex: 0 0 20%;
+  }
+}
+.product-tag-card {
+  @apply rounded-full shadow-base py-1 px-4 text-sm leading-5 border border-transparent text-gray-800 hover:text-primary hover:border-primary dark:text-gray-700 dark:hover:text-primary dark:border-gray-900  dark:hover:border-primary transition duration-300 cursor-pointer;
+}
+
+body {
+  @apply text-gray-900;
+  font-family: theme("fontFamily.default");
+}
+
+p {
+  @apply mb-0;
+}

@@ -1,0 +1,54 @@
+.navbar {
+  > .container {
+    height: 50px;
+  }
+
+  .nav {
+    &-menu {
+      @screen md-down {
+        @apply fixed inset-0 w-0 h-full bg-white z-1 overflow-hidden transition-all duration-500 ease-in-out invisible pt-9;
+
+        &.isExpanded {
+          @apply w-full overflow-auto visible;
+
+          &-dark {
+            @apply bg-black;
+          }
+        }
+
+        .hide-menu {
+          @apply absolute top-5 right-5;
+        }
+
+        a {
+          @apply block w-max mx-auto my-6 text-base;
+        }
+      }
+    }
+
+    &-item {
+      .switch {
+        &-mode {
+          @apply relative mr-6 cursor-pointer;
+
+          input {
+            @apply absolute inset-0 hidden;
+          }
+        }
+        &-toggle {
+          @apply w-12 h-4 relative rounded-full;
+
+          .dot {
+            @apply w-6 h-6 absolute top-1/2 left-0 translate-y-[-50%] shadow-1 rounded-full transition-all duration-300 ease-out flex items-center justify-center;
+          }
+
+          &.isDarkMode {
+            .dot {
+              @apply left-1/2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
