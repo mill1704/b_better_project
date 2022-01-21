@@ -25,10 +25,70 @@
       }
     }
   }
-  
+
   &-tag {
     &-card {
       @apply rounded-full shadow-base py-1 px-4 text-sm leading-5 border border-transparent text-gray-800 hover:text-primary hover:border-primary dark:text-gray-700 dark:hover:text-primary dark:border-gray-900  dark:hover:border-primary transition duration-300 cursor-pointer;
+    }
+  }
+
+  &-brand {
+    &-card {
+      @apply h-20 w-20 flex items-center justify-center bg-white text-xs font-medium capitalize rounded-full shadow-round hover:shadow-round-hover transition duration-300 cursor-pointer dark:bg-gray-900 dark:text-gray-700;
+    }
+  }
+
+  &-list {
+    &-card {
+      @apply flex flex-col h-full shadow-base hover:shadow-base-hover rounded-lg cursor-pointer dark:bg-dark transition duration-300;
+
+      .image {
+        &-wrap {
+          @apply relative;
+          padding-top: $img-4-3;
+
+          img {
+            @apply absolute inset-0 w-full h-full object-contain rounded-t-lg;
+          }
+        }
+      }
+
+      .content {
+        @apply flex flex-col h-full dark:text-gray-700;
+
+        .name {
+          @apply transition duration-300;
+          @extend .tx-truncate, .tx-truncate-2;
+        }
+      }
+
+      &-wrap {
+        max-width: 50%;
+        flex: 0 0 50%;
+
+        @screen sm {
+          max-width: 33.33%;
+          flex: 0 0 33.33%;
+        }
+
+        @screen md {
+          max-width: 25%;
+          flex: 0 0 25%;
+        }
+
+        @screen lg {
+          max-width: 20%;
+          flex: 0 0 20%;
+        }
+      }
+
+      &:hover {
+        .content {
+          .name {
+            @apply text-primary dark:text-primary;
+          }
+        }
+      }
     }
   }
 }

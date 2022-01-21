@@ -2,8 +2,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.tx-truncate, .product-list-card .content .name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tx-truncate-2, .product-list-card .content .name {
+  -webkit-line-clamp: 2;
+}
+
+.navbar {
+  @apply fixed w-full z-10;
+}
 .navbar > .container {
   height: 50px;
+}
+.navbar + .content {
+  padding-top: 50px;
 }
 @screen md-down {
   .navbar .nav-menu {
@@ -66,6 +82,50 @@
 }
 .product-tag-card {
   @apply rounded-full shadow-base py-1 px-4 text-sm leading-5 border border-transparent text-gray-800 hover:text-primary hover:border-primary dark:text-gray-700 dark:hover:text-primary dark:border-gray-900  dark:hover:border-primary transition duration-300 cursor-pointer;
+}
+.product-brand-card {
+  @apply h-20 w-20 flex items-center justify-center bg-white text-xs font-medium capitalize rounded-full shadow-round hover:shadow-round-hover transition duration-300 cursor-pointer dark:bg-gray-900 dark:text-gray-700;
+}
+.product-list-card {
+  @apply flex flex-col h-full shadow-base hover:shadow-base-hover rounded-lg cursor-pointer dark:bg-dark transition duration-300;
+}
+.product-list-card .image-wrap {
+  @apply relative;
+  padding-top: 75%;
+}
+.product-list-card .image-wrap img {
+  @apply absolute inset-0 w-full h-full object-contain rounded-t-lg;
+}
+.product-list-card .content {
+  @apply flex flex-col h-full dark:text-gray-700;
+}
+.product-list-card .content .name {
+  @apply transition duration-300;
+}
+.product-list-card-wrap {
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+@screen sm {
+  .product-list-card-wrap {
+    max-width: 33.33%;
+    flex: 0 0 33.33%;
+  }
+}
+@screen md {
+  .product-list-card-wrap {
+    max-width: 25%;
+    flex: 0 0 25%;
+  }
+}
+@screen lg {
+  .product-list-card-wrap {
+    max-width: 20%;
+    flex: 0 0 20%;
+  }
+}
+.product-list-card:hover .content .name {
+  @apply text-primary dark:text-primary;
 }
 
 body {

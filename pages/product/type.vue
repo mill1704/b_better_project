@@ -36,7 +36,7 @@ export default {
     async getData() {
       try {
         this.loading = true
-        const resp = await this.$axios.$get(`${ this.$config.baseUrl }/products.json?product_type=${this.type}`)
+        const resp = await this.$axios.$get(`${ this.$config.baseUrl }?product_type=${this.type}`)
         this.items = resp
       } catch (error) {
       } finally {

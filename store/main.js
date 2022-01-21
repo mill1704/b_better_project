@@ -1,5 +1,6 @@
 export const state = () => ({
   darkMode: false,
+  productLists: [],
   productType: [
     {
       type: 'bronzer',
@@ -147,6 +148,7 @@ export const state = () => ({
   ],
   productBrandsIndex: [],
   productTagsIndex: [],
+  productListsIndex: [],
 })
 
 export const mutations = {
@@ -154,8 +156,9 @@ export const mutations = {
     state[params[0]] = params[1]
   },
   shuffle(state, params) {
-    params[1].sort(() => Math.random() - 0.5)
-    if(params[2] && this.$_.size(params[1]) > params[2]) params[1].length = params[2]
-    this.$setState(params[0], params[1])
-  }
+    const item = params[1].slice()
+    item.sort(() => Math.random() - 0.5)
+    if (params[2] && this.$_.size(item) > params[2]) item.length = params[2]
+    this.$setState(params[0], item)
+  },
 }

@@ -2,7 +2,7 @@
   <div :class="{ dark: isDarkMode }">
     <div class="wrapper">
       <Navbar />
-      <Nuxt />
+      <Nuxt class="content" />
     </div>
   </div>
 </template>

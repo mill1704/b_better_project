@@ -1,6 +1,12 @@
 .navbar {
+  @apply fixed w-full z-10;
+
   > .container {
-    height: 50px;
+    height: $navbar-height;
+  }
+
+  + .content {
+    padding-top: $navbar-height;
   }
 
   .nav {

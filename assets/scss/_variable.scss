@@ -1,0 +1,17 @@
+// navbar
+$navbar-height: 50px;
+
+// ratio
+$img-4-3: 75%;
+
+// text
+.tx-truncate {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &-2 {
+    -webkit-line-clamp: 2;
+  }
+}

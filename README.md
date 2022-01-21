@@ -1,5 +1,6 @@
 # b_better_project
 project for practice
+
 api form http://makeup-api.herokuapp.com
 
 ## Build Setup

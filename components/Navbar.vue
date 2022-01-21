@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar shadow-base">
+  <div class="navbar bg-white dark:bg-black shadow-base">
     <div class="container flex items-center">
       <div class="nav-toggle md:hidden" @click="expandMenu">
         <MenuIcon size="20" class="mr-6 stroke-gray-800 dark:stroke-white" />
