@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     setImage() {
-      return this.item.image_link || this.emptyImage
+      return this.item.api_featured_image || this.item.image_link || this.emptyImage
     },
   },
   methods: {

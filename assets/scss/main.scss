@@ -21,3 +21,23 @@ body {
 p {
   @apply mb-0;
 }
+
+.wrapper {
+  @apply flex flex-col min-h-screen;
+}
+
+.footer {
+  .btn-back-to-top {
+    svg {
+      @apply transition duration-300;
+    }
+  }
+
+  .btn-back-to-top {
+    &:hover {
+      svg {
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

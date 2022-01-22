@@ -34,6 +34,7 @@ export default {
     setTheme() {
       let theme = ''
       if (this.theme === 'default') theme = 'text-gray-900 hover:text-primary dark:text-white dark:hover:text-primary'
+      else if (this.theme === 'btn-outline-primary') theme = 'text-primary border-2 border-primary rounded-full py-1.5 px-5 hover:text-white hover:bg-primary'
       return theme
     },
   },

@@ -46,7 +46,7 @@
 
 <script>
 export default {
-  name: 'NavBar',
+  name: 'NavbarWebsite',
   props: {
     mode: {
       type: Boolean,

@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="product-tag container text-center pt-10">
-        <TextHeader title="Or maybe you are looking for these products ?" />
+        <TextHeader title="Or maybe you are looking for these products ?" class="mb-4" />
         <div class="flex flex-wrap justify-center mx-auto max-w-screen-md">
           <div
             v-for="(tag, index) in productTagsIndex"
@@ -38,10 +38,10 @@
         </div>
         <ButtonLink link="/" theme="default" text="View more" icon="arrow-right" />
       </div>
-      <div class="product-brand bg-secondary dark:bg-dark pt-6 pb-4">
+      <div class="product-brand bg-secondary dark:bg-dark py-7">
         <div class="container text-center">
           <TextHeader title="Brands" class="mb-0" />
-          <p class="text-xs text-gray-800 dark:text-gray-700 mb-2">
+          <p class="text-xs text-gray-800 dark:text-gray-700 mb-4">
             Est odit et officiis omnis corporis recusandae odio ipsam.
           </p>
           <div class="flex flex-wrap items-center justify-center mx-auto max-w-xl">
@@ -53,15 +53,17 @@
               <ProductCardBrand :item="brand" />
             </div>
           </div>
+          <ButtonLink link="/" theme="default" text="View more" icon="arrow-right" class="mt-3 mb-0" />
         </div>
       </div>
-      <div class="product-list container text-center pt-6">
+      <div class="product-list container text-center pt-8">
         <TextHeader title="All Products" />
         <div class="flex flex-wrap lg:justify-center -mx-2">
-          <div v-for="(product, index) in productListsIndex" :key="index" class="product-list-card-wrap px-2 my-2">
+          <div v-for="(product, index) in productListsIndex" :key="index" class="product-list-card-wrap px-2 my-3">
             <ProductCardList :item="product" />        
           </div>
         </div>
+        <ButtonLink link="/" theme="btn-outline-primary" text="View more" icon="arrow-right" />
       </div>
     </div>
   </div>
