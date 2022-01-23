@@ -10,8 +10,12 @@
 @import './variable';
 
 // components
+@import './components/loading';
 @import './components/navbar';
 @import './components/product';
+
+// page
+@import './page/product-detail';
 
 body {
   @apply text-gray-900;

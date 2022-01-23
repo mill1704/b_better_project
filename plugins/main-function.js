@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import moment from 'moment'
 
 export default (context, inject) => {
   const getState = (key) => {
@@ -22,6 +23,7 @@ export default (context, inject) => {
   }
 
   inject('_', _)
+  inject('moment', moment)
   inject('getProduct', getProduct)
   inject('getState', getState)
   inject('setState', setState)

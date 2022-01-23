@@ -57,6 +57,13 @@ module.exports = {
       zIndex: {
         1: '1',
       },
+      minWidth: {
+        '130px': '130px',
+      },
+      maxWidth: {
+        '200px': '200px',
+        '720px': '720px',
+      },
     },
   },
   plugins: [],

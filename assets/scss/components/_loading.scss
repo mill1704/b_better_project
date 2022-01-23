@@ -1,0 +1,6 @@
+.loading {
+  @apply fixed inset-0 flex items-center justify-center z-50 bg-white dark:bg-black;
+
+  .v-spinner {
+  }
+}

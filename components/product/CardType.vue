@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     goToPage() {
-      this.$router.push(`/product/type?type=${ this.item.type }`)
+      this.$router.push(`/type/list?type=${ this.item.type }`)
     }
   }
 }

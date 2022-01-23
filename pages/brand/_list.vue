@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'ProductBrand',
+  name: 'AllBrandList',
   data() {
     return {
       brand: this.$route.query.brand,

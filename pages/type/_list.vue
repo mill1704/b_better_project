@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'ProductType',
+  name: 'TypeList',
   data() {
     return {
       type: this.$route.query.type,

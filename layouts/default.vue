@@ -22,6 +22,9 @@ export default {
       else document.querySelector('body').classList.remove('bg-black');
     }
   },
+  mounted() {
+    if (this.isDarkMode) document.querySelector('body').classList.add('bg-black');
+  },
 }
 </script>
 

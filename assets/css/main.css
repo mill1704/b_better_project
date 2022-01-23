@@ -12,6 +12,9 @@
   -webkit-line-clamp: 2;
 }
 
+.loading {
+  @apply fixed inset-0 flex items-center justify-center z-50 bg-white dark:bg-black;
+}
 .navbar {
   @apply fixed w-full z-10;
 }

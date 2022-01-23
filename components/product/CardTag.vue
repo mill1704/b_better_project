@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     goToPage() {
-      this.$router.push(`/product/tag?tag=${ this.item }`)
+      this.$router.push(`/tag/list?tag=${ this.item }`)
     },
   },
 }

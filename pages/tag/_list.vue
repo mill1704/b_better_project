@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'ProductTag',
+  name: 'AllTagList',
   data() {
     return {
       tag: this.$route.query.tag,

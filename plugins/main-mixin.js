@@ -27,4 +27,9 @@ Vue.mixin({
       return this.$getState('productListsIndex')
     },
   },
+  methods: {
+    getBack() {
+      this.$router.back()
+    },
+  },
 })

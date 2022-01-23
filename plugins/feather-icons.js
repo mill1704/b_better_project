@@ -6,6 +6,7 @@ import {
   MenuIcon,
   XIcon,
   ArrowRightIcon,
+  ArrowLeftIcon,
   ArrowUpIcon,
 } from 'vue-feather-icons'
 
@@ -15,4 +16,5 @@ Vue.component('MoonIcon', MoonIcon)
 Vue.component('MenuIcon', MenuIcon)
 Vue.component('XIcon', XIcon)
 Vue.component('ArrowRightIcon', ArrowRightIcon)
+Vue.component('ArrowLeftIcon', ArrowLeftIcon)
 Vue.component('ArrowUpIcon', ArrowUpIcon)

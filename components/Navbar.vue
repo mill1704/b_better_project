@@ -76,6 +76,9 @@ export default {
       isExpanded: false,
     }
   },
+  mounted() {
+    this.webMode = this.isDarkMode
+  },
   methods: {
     switchMode() {
       this.$setState('darkMode', this.webMode = !this.webMode);

@@ -1,7 +1,6 @@
 <template>
   <div class="pb-32">
-    <h1 v-if="loading">Loading...</h1>
-
+    <Loading v-if="loading" :loading="loading" />
     <div v-else>
       <div class="header border-b border-gray-600 dark:border-gray-900">
         <div class="container py-6 text-center">
@@ -60,7 +59,7 @@
         <TextHeader title="All Products" />
         <div class="flex flex-wrap lg:justify-center -mx-2">
           <div v-for="(product, index) in productListsIndex" :key="index" class="product-list-card-wrap px-2 my-3">
-            <ProductCardList :item="product" />        
+            <ProductCardItem :item="product" />        
           </div>
         </div>
         <ButtonLink link="/" theme="btn-outline-primary" text="View more" icon="arrow-right" />
