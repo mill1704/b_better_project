@@ -13,13 +13,28 @@
 @import './components/loading';
 @import './components/navbar';
 @import './components/product';
+@import './components/transition-page';
+@import './components/vue-select';
 
 // page
-@import './page/product-detail';
+
+* {
+  &::-webkit-scrollbar-track {
+    @apply bg-gray-600 rounded-full;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full;
+  }
+}
 
 body {
   @apply text-gray-900;
   font-family: theme('fontFamily.default');
+
+  &::-webkit-scrollbar {
+    @apply w-3;
+  }
 }
 
 p {
@@ -28,6 +43,10 @@ p {
 
 .wrapper {
   @apply flex flex-col min-h-screen;
+}
+
+.main-layout {
+  @apply container pt-6 pb-32;
 }
 
 .footer {

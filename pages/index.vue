@@ -1,6 +1,6 @@
 <template>
   <div class="pb-32">
-    <Loading v-if="loading" :loading="loading" />
+    <SpinnerLoading v-if="loading" :loading="loading" />
     <div v-else>
       <div class="header border-b border-gray-600 dark:border-gray-900">
         <div class="container py-6 text-center">
@@ -35,7 +35,7 @@
             <ProductCardTag :item="tag" />
           </div>
         </div>
-        <ButtonLink link="/" theme="default" text="View more" icon="arrow-right" />
+        <ButtonLink link="/tag" theme="default" text="View more" icon="arrow-right" />
       </div>
       <div class="product-brand bg-secondary dark:bg-dark py-7">
         <div class="container text-center">
@@ -52,17 +52,17 @@
               <ProductCardBrand :item="brand" />
             </div>
           </div>
-          <ButtonLink link="/" theme="default" text="View more" icon="arrow-right" class="mt-3 mb-0" />
+          <ButtonLink link="/brand" theme="default" text="View more" icon="arrow-right" class="mt-3 mb-0" />
         </div>
       </div>
       <div class="product-list container text-center pt-8">
         <TextHeader title="All Products" />
-        <div class="flex flex-wrap lg:justify-center -mx-2">
+        <div class="flex flex-wrap -mx-2">
           <div v-for="(product, index) in productListsIndex" :key="index" class="product-list-card-wrap px-2 my-3">
             <ProductCardItem :item="product" />        
           </div>
         </div>
-        <ButtonLink link="/" theme="btn-outline-primary" text="View more" icon="arrow-right" />
+        <ButtonLink link="/product/all" theme="btn-outline-primary" text="View more" icon="arrow-right" />
       </div>
     </div>
   </div>
@@ -76,7 +76,6 @@ export default {
       loading: true,
     }
   },
-  computed: {},
   mounted() {
     new Promise((resolve) => resolve())
       .then(this.getProductTags)

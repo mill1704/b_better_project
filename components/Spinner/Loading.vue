@@ -1,5 +1,5 @@
 <template>
-  <div class="loading">
+  <div class="main-loading">
     <grid-loader :loading="loading" :color="color" :size="size"></grid-loader>
   </div>
 </template>

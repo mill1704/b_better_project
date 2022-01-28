@@ -28,6 +28,7 @@ export default {
     '~/plugins/main-mixin',
     '~/plugins/feather-icons',
     '~/plugins/v-click-outside',
+    '~/plugins/vue-select',
     '~/plugins/vue-spinner',
   ],
 

@@ -12,9 +12,10 @@
   -webkit-line-clamp: 2;
 }
 
-.loading {
+.main-loading {
   @apply fixed inset-0 flex items-center justify-center z-50 bg-white dark:bg-black;
 }
+
 .navbar {
   @apply fixed w-full z-10;
 }
@@ -131,9 +132,89 @@
   @apply text-primary dark:text-primary;
 }
 
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: transform 0.7s, opacity 0.5s;
+}
+
+.slide-down-enter,
+.slide-down-leave-active {
+  transform: translateY(-30px);
+  opacity: 0;
+}
+
+.v-select.none-outline {
+  width: 190px;
+}
+.v-select.none-outline.center {
+  @apply mx-auto;
+}
+.v-select.none-outline .vs__dropdown-toggle {
+  @apply border-0 border-b border-gray-800 p-0 rounded-none px-2;
+}
+.v-select.none-outline .vs__dropdown-toggle .vs__selected-options {
+  @apply p-0 overflow-hidden;
+  max-height: 22px;
+}
+.v-select.none-outline .vs__dropdown-toggle .vs__selected {
+  @apply m-0 p-0 text-sm dark:text-gray-700 truncate block;
+}
+.v-select.none-outline .vs__dropdown-toggle .vs__search {
+  @apply m-0 p-0 border-0 h-0;
+}
+.v-select.none-outline .vs__dropdown-toggle .vs__actions {
+  @apply m-0 p-0;
+}
+.v-select.none-outline .vs__dropdown-toggle .vs__actions .vs__clear {
+  @apply mr-1;
+  transform: scale(0.8);
+}
+.v-select.none-outline .vs__dropdown-toggle .vs__actions .vs__clear svg {
+  @apply fill-gray-900 dark:fill-gray-700;
+}
+.v-select.none-outline .vs__dropdown-toggle .vs__open-indicator {
+  @apply fill-gray-900 dark:fill-gray-700;
+  transform: scale(0.7);
+}
+.v-select.none-outline .vs__dropdown-menu {
+  @apply p-0 mt-0 border-transparent border-t border-solid border-t-gray-800 rounded-b-lg shadow-round dark:bg-gray-900 dark:text-gray-700 text-xs;
+  max-height: 150px;
+}
+.v-select.none-outline .vs__dropdown-menu::-webkit-scrollbar {
+  @apply w-1;
+}
+.v-select.none-outline .vs__dropdown-option {
+  @apply text-sm dark:text-gray-700;
+}
+.v-select.none-outline .vs__dropdown-option--highlight {
+  @apply bg-primary dark:text-white;
+}
+.v-select.none-outline.vs--open .vs__actions .vs__open-indicator {
+  transform: rotate(180deg) scale(0.7);
+}
+.v-select.none-outline.vs--open .vs__selected {
+  @apply inset-0;
+}
+.v-select.none-outline.vs--open .vs__search {
+  @apply dark:text-gray-700 h-auto;
+}
+.v-select.isAll .vs__actions .vs__clear {
+  display: none;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-gray-600 rounded-full;
+}
+*::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
 body {
   @apply text-gray-900;
   font-family: theme("fontFamily.default");
+}
+body::-webkit-scrollbar {
+  @apply w-3;
 }
 
 p {
@@ -142,6 +223,10 @@ p {
 
 .wrapper {
   @apply flex flex-col min-h-screen;
+}
+
+.main-layout {
+  @apply container pt-6 pb-32;
 }
 
 .footer .btn-back-to-top svg {

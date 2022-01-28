@@ -8,6 +8,8 @@ import {
   ArrowRightIcon,
   ArrowLeftIcon,
   ArrowUpIcon,
+  PlusSquareIcon,
+  MinusSquareIcon,
 } from 'vue-feather-icons'
 
 Vue.component('ChevronDownIcon', ChevronDownIcon)
@@ -18,3 +20,5 @@ Vue.component('XIcon', XIcon)
 Vue.component('ArrowRightIcon', ArrowRightIcon)
 Vue.component('ArrowLeftIcon', ArrowLeftIcon)
 Vue.component('ArrowUpIcon', ArrowUpIcon)
+Vue.component('PlusSquareIcon', PlusSquareIcon)
+Vue.component('MinusSquareIcon', MinusSquareIcon)
