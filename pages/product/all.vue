@@ -6,18 +6,28 @@
       <div class="container mt-4">
         <SpinnerSoftLoading v-if="softLoading" :loading="softLoading" class="text-center my-8" />
         <div v-else>
-          <div class="text-right text-sm text-gray-800 dark:text-gray-700">
-            <span class="text-primary">{{ items.length }}</span> items
+          <div v-if="$_.isEmpty(items)">
+            <SectionResultNotFound class="mt-12" />
           </div>
-          <div class="flex flex-wrap -mx-2">
-            <div
-              v-for="(product, index) in items"
-              :key="index"
-              class="product-list-card-wrap px-2 my-3"
-            >
-              <ProductCardItem :item="product" />
+          <div v-else>
+            <ProductItemLength :length="items.length" />
+            <div class="flex flex-wrap -mx-2">
+              <div
+                v-for="(product, index) in items"
+                :key="index"
+                class="product-list-card-wrap px-2 my-3"
+              >
+                <ProductCardItem :item="product" />
+              </div>
             </div>
           </div>
+          <ButtonPrimary
+            text="Back"
+            theme="btn-outline-primary"
+            icon="arrow-left"
+            class="mt-12"
+            @action="getBack()"
+          />
         </div>
       </div>
     </div>
@@ -38,10 +48,10 @@ export default {
     }
   },
   mounted() {
-    new Promise((resolve) => resolve()).then(this.getProduct).then(() => (this.loading = false))
+    new Promise((resolve) => resolve()).then(this.getData).then(() => (this.loading = false))
   },
   methods: {
-    async getProduct() {
+    async getData() {
       if (this.$_.isEmpty(this.productLists)) {
         await this.$getProduct()
         this.items = this.productLists
@@ -68,11 +78,11 @@ export default {
         }, 100)
       }
     },
-    getResultFilter(type, brand, tag) {
+    getResultFilter(category, type, brand, tag) {
       this.type = type === 'All' ? '' : type
       this.brand = brand === 'All' ? '' : brand
       this.tag = tag === 'All' ? '' : tag
-      this.getProduct()
+      this.getData()
     },
   },
 }

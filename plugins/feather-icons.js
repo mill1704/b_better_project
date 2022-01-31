@@ -10,6 +10,8 @@ import {
   ArrowUpIcon,
   PlusSquareIcon,
   MinusSquareIcon,
+  AlertCircleIcon,
+  SearchIcon,
 } from 'vue-feather-icons'
 
 Vue.component('ChevronDownIcon', ChevronDownIcon)
@@ -22,3 +24,5 @@ Vue.component('ArrowLeftIcon', ArrowLeftIcon)
 Vue.component('ArrowUpIcon', ArrowUpIcon)
 Vue.component('PlusSquareIcon', PlusSquareIcon)
 Vue.component('MinusSquareIcon', MinusSquareIcon)
+Vue.component('AlertCircleIcon', AlertCircleIcon)
+Vue.component('SearchIcon', SearchIcon)

@@ -11,11 +11,6 @@
 <script>
 export default {
   name: 'MainLayout',
-  head() {
-    return {
-      title: 'b better',
-    }
-  },
   watch: {
     isDarkMode(newVal, oldVal) {
       if(newVal && newVal !== oldVal) document.querySelector('body').classList.add('bg-black');

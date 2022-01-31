@@ -1,6 +1,8 @@
 <template>
-  <div>
-      all brand
+  <div class="page-brand-all">
+    <div class="main-layout">
+      <Header type="brands" search />
+    </div>
   </div>
 </template>
 

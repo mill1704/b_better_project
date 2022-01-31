@@ -1,4 +1,5 @@
-# b_better_project
+# makeup_project
+
 project for practice
 
 api form http://makeup-api.herokuapp.com

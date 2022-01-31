@@ -1,6 +1,8 @@
 <template>
-  <div>
-      all tag
+  <div class="page-tag-all">
+    <div class="main-layout">
+      <Header type="tags" />
+    </div>
   </div>
 </template>
 

@@ -6,7 +6,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'b_better_project',
+    title: 'b better',
     htmlAttrs: {
       lang: 'en',
     },
