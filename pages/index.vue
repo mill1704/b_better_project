@@ -52,7 +52,13 @@
               <ProductCardBrand :item="brand" />
             </div>
           </div>
-          <ButtonLink link="/brand" theme="default" text="View more" icon="arrow-right" class="mt-3 mb-0" />
+          <ButtonLink
+            link="/brand"
+            theme="default"
+            text="View more"
+            icon="arrow-right"
+            class="mt-3 mb-0"
+          />
         </div>
       </div>
       <div class="product-list container text-center pt-8">
@@ -62,7 +68,12 @@
             <ProductCardItem :item="product" />        
           </div>
         </div>
-        <ButtonLink link="/product/all" theme="btn-outline-primary" text="View more" icon="arrow-right" />
+        <ButtonLink
+          link="/product/all"
+          theme="btn-outline-primary"
+          text="View more"
+          icon="arrow-right"
+        />
       </div>
     </div>
   </div>
@@ -74,6 +85,9 @@ export default {
   data() {
     return {
       loading: true,
+      productTagsIndex: '',
+      productBrandsIndex: '',
+      productListsIndex: '',
     }
   },
   mounted() {
@@ -85,14 +99,14 @@ export default {
   },
   methods: {
     getProductTags() {
-      this.$shuffle('productTagsIndex', this.productTags, 10)
+      this.productTagsIndex = this.$shuffle(this.productTags, 10)
     },
     getProductBrands() {
-      this.$shuffle('productBrandsIndex', this.productBrands, 10)
+      this.productBrandsIndex = this.$shuffle(this.productBrands, 10)
     },
     async getProductsLists() {
       await this.$getProduct()
-      this.$shuffle('productListsIndex', this.productLists, 10)
+      this.productListsIndex = this.$shuffle(this.productLists, 10)
     },
   },
 }

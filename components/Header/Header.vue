@@ -1,5 +1,5 @@
 <template>
-  <div class="border-b border-gray-600 dark:border-gray-900 px-4 pb-4">
+  <div class="px-4 pb-4" :class="{ 'border-b border-gray-600 dark:border-gray-900': !search }">
     <div class="py-6 text-2xl font-medium text-center dark:text-white">
       <p v-if="type === 'all'">All Products</p>
       <p v-else class="capitalize">
@@ -12,7 +12,7 @@
       :categories="productCategory"
       @resultFilter="getFilter"
     />
-    <HeaderSearch v-if="search" />
+    <HeaderSearch v-if="search" :placeholder="placeholder" @resultSearch="getResultSearch" />
   </div>
 </template>
 
@@ -39,9 +39,18 @@ export default {
       type: Array,
       default: () => [],
     },
+    placeholder: {
+      type: String,
+      default: 'Enter some word',
+    },
+    resultSearch: {
+      type: Function,
+      default: () => {},
+    },
   },
   data() {
     return {
+      searchResult: '',
       filterCategory: '',
       filterType: '',
       filterBrand: '',
@@ -50,6 +59,10 @@ export default {
   },
   mounted() {},
   methods: {
+    getResultSearch(val) {
+      this.searchResult = val
+      this.$emit('resultSearch', val)
+    },
     getFilter(category, type, brand, tag) {
       this.filterCategory = category
       this.filterType = type

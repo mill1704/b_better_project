@@ -1,5 +1,5 @@
 <template>
-  <div class="product-brand-card" @click="goToPage">{{ item }}</div>
+  <div class="product-brand-card text-center" @click="goToPage">{{ item }}</div>
 </template>
 
 <script>

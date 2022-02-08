@@ -10,8 +10,10 @@ export default (context, inject) => {
     return context.store.commit('main/setState', [key, value])
   }
 
-  const shuffle = (key, value, length) => {
-    return context.store.commit('main/shuffle', [key, value, length])
+  const shuffle = (key, length) => {
+    const itemShuffle = _.shuffle(key)
+    if (itemShuffle && _.size(itemShuffle) > length) itemShuffle.length = length
+    return itemShuffle
   }
 
   const getProduct = async () => {

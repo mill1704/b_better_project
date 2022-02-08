@@ -146,19 +146,10 @@ export const state = () => ({
     'silicone free',
     'water free',
   ],
-  productBrandsIndex: [],
-  productTagsIndex: [],
-  productListsIndex: [],
 })
 
 export const mutations = {
   setState(state, params) {
     state[params[0]] = params[1]
-  },
-  shuffle(state, params) {
-    const item = params[1].slice()
-    item.sort(() => Math.random() - 0.5)
-    if (params[2] && this.$_.size(item) > params[2]) item.length = params[2]
-    this.$setState(params[0], item)
   },
 }

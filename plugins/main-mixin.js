@@ -17,15 +17,6 @@ Vue.mixin({
     productBrands() {
       return this.$getState('productBrands')
     },
-    productTagsIndex() {
-      return this.$getState('productTagsIndex')
-    },
-    productBrandsIndex() {
-      return this.$getState('productBrandsIndex')
-    },
-    productListsIndex() {
-      return this.$getState('productListsIndex')
-    },
   },
   methods: {
     getBack() {

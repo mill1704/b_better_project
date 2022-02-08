@@ -1,0 +1,15 @@
+.form-input {
+  @apply w-full rounded-full border outline-0 h-9 py-2 px-5 text-sm placeholder:text-gray-700 dark:bg-dark dark:text-gray-700;
+}
+
+.search-field {
+  @apply relative;
+
+  .icon {
+    @apply absolute left-5 top-1/2 -translate-y-1/2 dark:stroke-gray-700;
+  }
+
+  .form-input {
+    @apply pl-11;
+  }
+}
